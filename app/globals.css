@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* ── Font utilities ──────────────────────────────────────────────── */
+.font-editorial {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+}
+
+.font-sans-clean {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* ── Base ────────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background: #F5F0E8;
+  color: #1A1410;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Thin hairline border utility ───────────────────────────────── */
+.hairline        { border-color: #DED5C8; }
+.hairline-b      { border-bottom: 1px solid #DED5C8; }
+.hairline-t      { border-top: 1px solid #DED5C8; }
+.hairline-r      { border-right: 1px solid #DED5C8; }
+.h-divider       { width: 1px; background: #DED5C8; align-self: stretch; }
+
+/* ── Smooth image crossfade on car switch ───────────────────────── */
+@keyframes imgReveal {
+  from { opacity: 0; transform: scale(1.03); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.img-reveal {
+  animation: imgReveal 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ── Terracotta underline for active nav ────────────────────────── */
+.nav-active {
+  position: relative;
+}
+.nav-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1.5px;
+  background: #C1572B;
+}
+
+/* ── Car list row hover ─────────────────────────────────────────── */
+.car-row {
+  transition: color 0.15s ease;
+}
+.car-row:hover .car-row-name {
+  color: #1A1410;
+}
